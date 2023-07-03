@@ -240,18 +240,18 @@ function WalletView({
   return (
     <>
       <div className="content">
-        <div className="logoutButton" onClick={logout}>
+        <div className="logoutButton" onClick={logout} style={{marginTop : "30px"}}>
           <LogoutOutlined />
         </div>
-        <div className="walletName">Wallet</div>
+        <div className="walletName" style={{marginTop : "30px"}}>Wallet</div>
         <Tooltip title={wallet}>
           <div>
             {wallet.slice(0, 4)}...{wallet.slice(38)}
           </div>
         </Tooltip>
         <Divider />
-        {!fetching ? (
-          <Spin />
+        {fetching ? (
+          <Spin style={{marginBottom : "150px"}}/>
         ) : (
           <Tabs defaultActiveKey="1" items={items} className="walletView" />
         )}
