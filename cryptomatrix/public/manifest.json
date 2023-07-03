@@ -1,13 +1,17 @@
 {
-  "name": "M'Wallet",
+  "name": "CryptoMatrix",
   "version": "1.0.0",
-  "description": "Your First Crypto Wallet Extension",
+  "description": "Crypto Wallet Extension",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
     "default_title": "Open Wallet"
   },
-  "permissions": [
-    "storage"
-  ]
+  "icons": {
+    "16": "./favicon-16x16.png",
+    "32": "./favicon-32x32.png",
+    "192": "./android-chrome-192x192.png",
+    "512": "./android-chrome-512x512.png"
+  },
+  "permissions": ["storage"]
 }
