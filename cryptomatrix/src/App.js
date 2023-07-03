@@ -35,6 +35,9 @@ function App() {
           ]}
           className="dropdown"
         ></Select>
+        <Routes>
+          <Route path="/" element={<Home/>}/>;
+        </Routes>
       </header>
     </div>
   );
