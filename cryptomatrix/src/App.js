@@ -9,14 +9,14 @@ import RecoverAccount from "./components/RecoverAccount";
 import WalletView from "./components/WalletView";
 
 function App() {
-  const [selectedChain, setSelectedChain] = useState("0x1");
-  const [seedPhrase, setSeedPhrase] = useState(null);
   const [wallet, setWallet] = useState(null);
+  const [seedPhrase, setSeedPhrase] = useState(null);
+  const [selectedChain, setSelectedChain] = useState("0x1");
 
   return (
     <div className="App">
       <header>
-        <img src={logo} className="headerLogo" />
+        <img src={logo} className="headerLogo" alt="logo" />
         <Select
           onChange={(val) => setSelectedChain(val)}
           value={selectedChain}
@@ -43,12 +43,31 @@ function App() {
       </header>
       {wallet && seedPhrase ? (
         <Routes>
-          <Route path="/yourwallet" element={<WalletView />} />
+          <Route
+            path="/yourwallet"
+            element={
+              <WalletView
+                wallet={wallet}
+                setWallet={setWallet}
+                seedPhrase={seedPhrase}
+                setSeedPhrase={setSeedPhrase}
+                selectedChain={selectedChain}
+              />
+            }
+          />
         </Routes>
       ) : (
         <Routes>
-          <Route path="/" element={<Home />} />;
-          <Route path="/recover" element={<RecoverAccount />} />
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/recover"
+            element={
+              <RecoverAccount
+                setSeedPhrase={setSeedPhrase}
+                setWallet={setWallet}
+              />
+            }
+          />
           <Route
             path="/yourwallet"
             element={

@@ -27,6 +27,7 @@ function Home() {
           onClick={() => navigate("/recover")}
           className="frontPageButton"
           type="default"
+          style={{ marginBottom: "30px" }}
         >
           Sign In With Seed Phrase
         </Button>

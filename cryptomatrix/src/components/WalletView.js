@@ -1,5 +1,20 @@
 import React from "react";
-
+import {
+  Divider,
+  Tooltip,
+  List,
+  Avatar,
+  Spin,
+  Tabs,
+  Input,
+  Button,
+} from "antd";
+import { LogoutOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
+import logo from "../noImg.png";
+import axios from "axios";
+import { CHAINS_CONFIG } from "../chains";
+import { ethers } from "ethers";
 
 const tokens = [
   {
@@ -34,14 +49,20 @@ const nfts = [
   "https://nft-preview-media.s3.us-east-1.amazonaws.com/evm/0x1/0x749f5ddf5ab4c1f26f74560a78300563c34b417d/0x90cae88ffc909feab8e4df76abd0652dee98b7bffab29597d898260d91c20aa1/high.jpeg",
 ];
 
-function WalletView() {
- 
-  
+function WalletView({
+  wallet,
+  setWallet,
+  seedPhrase,
+  setSeedPhrase,
+  selectedChain,
+}) {
 
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="content">
+        
       </div>
     </>
   );
