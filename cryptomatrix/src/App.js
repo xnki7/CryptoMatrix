@@ -2,11 +2,16 @@ import "./App.css";
 import { useState } from "react";
 import logo from "./cryptomatrixsvg.svg";
 import { Select } from "antd";
-import {Routes, Route} from "react-router-dom";
-import Home from "./components/Home"
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import CreateAccount from "./components/CreateAccount";
+import RecoverAccount from "./components/RecoverAccount";
+import WalletView from "./components/WalletView";
 
 function App() {
   const [selectedChain, setSelectedChain] = useState("0x1");
+  const [seedPhrase, setSeedPhrase] = useState(null);
+  const [wallet, setWallet] = useState(null);
 
   return (
     <div className="App">
@@ -35,10 +40,26 @@ function App() {
           ]}
           className="dropdown"
         ></Select>
-        <Routes>
-          <Route path="/" element={<Home/>}/>;
-        </Routes>
       </header>
+      {wallet && seedPhrase ? (
+        <Routes>
+          <Route path="/yourwallet" element={<WalletView />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />;
+          <Route path="/recover" element={<RecoverAccount />} />
+          <Route
+            path="/yourwallet"
+            element={
+              <CreateAccount
+                setSeedPhrase={setSeedPhrase}
+                setWallet={setWallet}
+              />
+            }
+          />
+        </Routes>
+      )}
     </div>
   );
 }

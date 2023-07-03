@@ -14,8 +14,8 @@ function Home() {
     <>
       <div className="content">
         <img src={mwallet} alt="logo" className="frontPageLogo" />
-        <h2> Hey There 👋 </h2>
-        <h4 className="h4"> Welcome to your Web3 Wallet</h4>
+        <h2>Hey There 👋</h2>
+        <h4 className="h4">Welcome to your Web3 Wallet</h4>
         <Button
           onClick={() => navigate("/yourwallet")}
           className="frontPageButton"
