@@ -3,7 +3,7 @@ const Moralis = require("moralis").default;
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-const port = 3001;
+// const port = 3001;
 
 app.use(cors({
   origin: ["crypto-matrix-nine.vercel.app"],
@@ -57,7 +57,7 @@ app.get("/getTokens", async (req, res) => {
 Moralis.start({
   apiKey: process.env.MORALIS_KEY,
 }).then(() => {
-  app.listen(port, () => {
+  app.listen(https://crypto-matrix-621c.vercel.app, () => {
     console.log(`Listening for API Calls`);
   });
 });
