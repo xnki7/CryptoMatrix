@@ -5,7 +5,11 @@ const cors = require("cors");
 require("dotenv").config();
 const port = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: ["crypto-matrix-nine.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true
+}));
 app.use(express.json());
 
 app.get("/getTokens", async (req, res) => {
