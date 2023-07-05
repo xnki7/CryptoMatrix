@@ -12,6 +12,10 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.get("/getTokens", async (req, res) => {
   const { userAddress, chain } = req.query;
 
