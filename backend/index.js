@@ -13,7 +13,7 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/api/getTokens", async (req, res) => {
+app.get("/getTokens", async (req, res) => {
   const { userAddress, chain } = req.query;
 
   try {
