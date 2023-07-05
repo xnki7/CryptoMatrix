@@ -190,7 +190,7 @@ function WalletView({
   async function getAccountTokens() {
     setFetching(true);
 
-    const res = await axios.get(`http://localhost:3001/getTokens`, {
+    const res = await axios.get(`crypto-matrix-hei6.vercel.app/getTokens`, {
       params: {
         userAddress: wallet,
         chain: selectedChain,
