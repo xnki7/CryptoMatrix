@@ -190,7 +190,7 @@ function WalletView({
   async function getAccountTokens() {
     setFetching(true);
 
-    const res = await axios.get(`crypto-matrix-hei6.vercel.app/getTokens`, {
+    const res = await axios.get(`http://localhost:3001/getTokens`, {
       params: {
         userAddress: wallet,
         chain: selectedChain,
@@ -240,10 +240,16 @@ function WalletView({
   return (
     <>
       <div className="content">
-        <div className="logoutButton" onClick={logout} style={{marginTop : "30px"}}>
+        <div
+          className="logoutButton"
+          onClick={logout}
+          style={{ marginTop: "30px" }}
+        >
           <LogoutOutlined />
         </div>
-        <div className="walletName" style={{marginTop : "30px"}}>Wallet</div>
+        <div className="walletName" style={{ marginTop: "30px" }}>
+          Wallet
+        </div>
         <Tooltip title={wallet}>
           <div>
             {wallet.slice(0, 4)}...{wallet.slice(38)}
@@ -251,7 +257,7 @@ function WalletView({
         </Tooltip>
         <Divider />
         {fetching ? (
-          <Spin style={{marginBottom : "150px"}}/>
+          <Spin style={{ marginBottom: "150px" }} />
         ) : (
           <Tabs defaultActiveKey="1" items={items} className="walletView" />
         )}
