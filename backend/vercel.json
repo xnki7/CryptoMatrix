@@ -1,10 +1,18 @@
 {
-   "version": 2,
-   "name": "music-album",
-   "builds": [
-      { "src": "app.js", "use": "@vercel/node" }
-   ],
-   "routes": [
-      { "src": "/(.*)", "dest": "/app.js" }
-   ]
+  "version": 2,
+  "routes": [
+    {
+      "src": "/getTokens",
+      "dest": "/api/getTokens"
+    }
+  ],
+  "env": {
+    "MORALIS_KEY": "fDCCYMY3ZQLBkZDFmhGWJqrKuyYONynwOcG7GOhzC5xSBKfbOq6Wb2sYLMN9IG6b"
+  },
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ]
 }
